@@ -1,0 +1,1858 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Dragonfly КБ">
+<meta name="theme-color" content="#03070d">
+<title>Комерційна пропозиція — Dragonfly KB</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#03070d;
+  --surface:#060d16;
+  --card:#080f1a;
+  --border:#0e1f30;
+  --cyan:#00d4ff;
+  --green:#00ff88;
+  --gold:#f0c040;
+  --red:#ff4444;
+  --text:#d4e2ef;
+  --white:#e8f4ff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+
+/* ── GLOBAL TEXT BOOST ── */
+p, li, .feat, .maint-item, .upg-card p, .pc p, .step p,
+.rev-table td, .price-desc, .sec-desc, .hero-sub,
+.about p, .cta-block p, .guarantee p {
+  font-size: 14px !important;
+  line-height: 1.85 !important;
+  color: rgba(215, 230, 242, 0.78) !important;
+}
+
+.feat.no { color: rgba(180, 200, 215, 0.4) !important; }
+.feat.yes { color: rgba(215, 235, 245, 0.85) !important; }
+
+.bq-hint { font-size: 12px !important; color: rgba(200,220,235,.55) !important; }
+.bq-label { font-size: 15px !important; color: #e8f4ff !important; }
+  .doc-label { font-size: 11px !important; letter-spacing: 3px !important; }
+  .meta-label { font-size: 11px !important; }
+  .meta-val { font-size: 15px !important; }
+  .sec-eye { font-size: 11px !important; letter-spacing: 2px !important; }
+  .rev-table { font-size: 12px !important; }
+  .rev-tag { font-size: 10px !important; padding: 4px 10px !important; }
+
+.meta-val { font-size: 15px !important; color: #e0edf8 !important; }
+.meta-label { font-size: 10px !important; color: rgba(200,220,235,.5) !important; }
+
+.counter-label { font-size: 11px !important; color: rgba(200,220,235,.55) !important; }
+
+.step p { font-size: 12px !important; color: rgba(200,220,235,.55) !important; }
+
+.rev-table td { font-size: 13px !important; color: rgba(215,230,242,.75) !important; }
+.rev-table td span { font-size: 11px !important; }
+
+.maint-card h3 { color: #e0edf8 !important; }
+.maint-price small { color: rgba(200,220,235,.55) !important; }
+.maint-card > div:nth-child(2) { color: rgba(200,220,235,.55) !important; }
+
+.upg-card h4 { color: #e0edf8 !important; }
+
+.t-text { color: rgba(210,225,240,.8) !important; }
+.t-text.dim { color: rgba(180,200,215,.4) !important; }
+
+.footer-copy { font-size: 12px !important; color: rgba(200,220,235,.45) !important; }
+html{scroll-behavior:auto}
+body{background:var(--bg);color:var(--text);font-family:'Syne',sans-serif;overflow-x:hidden;font-size:16px;-webkit-font-smoothing:antialiased}
+
+body::before{content:'';position:fixed;inset:0;z-index:0;
+background-image:linear-gradient(rgba(0,212,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,.025) 1px,transparent 1px);
+background-size:48px 48px;pointer-events:none}
+
+/* ── 3D NAV TITLE ── */
+.nav-3d-title{
+  display:flex;align-items:center;gap:1px;
+  cursor:default;user-select:none;
+  perspective:600px;
+}
+@media(max-width:768px){.nav-3d-title{display:none}}
+.n3d-char{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:13px;letter-spacing:1px;
+  color:rgba(200,220,235,.55);
+  display:inline-block;
+  transition:transform .3s ease,color .3s ease,text-shadow .3s ease;
+  transform-style:preserve-3d;
+}
+.n3d-char.accent{color:rgba(0,212,255,.6)}
+.n3d-space{width:6px;display:inline-block}
+.nav-3d-title:hover .n3d-char{
+  color:rgba(220,235,245,.9);
+  animation:wave3d .6s ease forwards;
+}
+.nav-3d-title:hover .n3d-char.accent{color:var(--cyan)}
+.n3d-char:nth-child(1){animation-delay:.00s}
+.n3d-char:nth-child(2){animation-delay:.03s}
+.n3d-char:nth-child(3){animation-delay:.06s}
+.n3d-char:nth-child(4){animation-delay:.09s}
+.n3d-char:nth-child(5){animation-delay:.12s}
+.n3d-char:nth-child(6){animation-delay:.15s}
+.n3d-char:nth-child(7){animation-delay:.18s}
+.n3d-char:nth-child(8){animation-delay:.21s}
+.n3d-char:nth-child(9){animation-delay:.24s}
+.n3d-char:nth-child(10){animation-delay:.27s}
+.n3d-char:nth-child(12){animation-delay:.30s}
+.n3d-char:nth-child(13){animation-delay:.33s}
+.n3d-char:nth-child(14){animation-delay:.36s}
+.n3d-char:nth-child(15){animation-delay:.39s}
+.n3d-char:nth-child(16){animation-delay:.42s}
+.n3d-char:nth-child(17){animation-delay:.45s}
+.n3d-char:nth-child(18){animation-delay:.48s}
+.n3d-char:nth-child(19){animation-delay:.51s}
+.n3d-char:nth-child(20){animation-delay:.54s}
+.n3d-char:nth-child(21){animation-delay:.57s}
+@keyframes wave3d{
+  0%{transform:translateY(0) rotateX(0deg)}
+  30%{transform:translateY(-6px) rotateX(25deg);text-shadow:0 8px 16px rgba(0,212,255,.4)}
+  60%{transform:translateY(2px) rotateX(-8deg)}
+  100%{transform:translateY(0) rotateX(0deg)}
+}
+
+/* NAV */
+#burgerBtn{display:none}
+nav{position:sticky;top:0;z-index:100;padding:14px 60px;
+background:rgba(3,7,13,.95);backdrop-filter:blur(16px);
+border-bottom:1px solid var(--border);
+display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:4px;color:var(--white)}
+.logo span{color:var(--cyan)}
+.nav-tag{font-size:9px;letter-spacing:4px;color:rgba(210,224,236,.55);text-transform:uppercase}
+
+
+/* HERO */
+.hero{position:relative;z-index:1;padding:32px 60px 52px;
+border-bottom:1px solid var(--border);
+background:var(--bg)}
+.doc-label{font-size:11px;letter-spacing:4px;color:var(--cyan);margin-top:0;margin-bottom:16px;
+display:flex;align-items:center;gap:12px;text-transform:uppercase}
+.doc-label::before{content:'';width:32px;height:1px;background:var(--cyan)}
+h1{font-family:'Bebas Neue',sans-serif;
+font-size:clamp(4rem,12vw,8.5rem);
+color:var(--white);line-height:.92;letter-spacing:2px;
+margin-bottom:28px;margin-top:4px}
+h1 span{color:var(--cyan)}
+
+/* HERO BULLET LIST */
+.hero-list{
+  list-style:disc;
+  padding-left:20px;
+  margin:0 0 36px;
+  display:flex;flex-direction:column;gap:10px;
+}
+.hero-list li{
+  font-family:'Syne',sans-serif;
+  font-size:15px;
+  color:rgba(210,224,236,.75);
+  line-height:1.5;
+  padding-left:4px;
+}
+.hero-list li::marker{
+  color:rgba(0,212,255,.6);
+  font-size:12px;
+}
+
+.doc-meta{display:flex;gap:40px;flex-wrap:wrap;margin-top:0;padding-top:24px;border-top:1px solid var(--border)}
+.meta-item{display:flex;flex-direction:column;gap:6px}
+.meta-label{font-size:10px;letter-spacing:3px;color:rgba(210,224,236,.45);text-transform:uppercase}
+.meta-val{font-size:16px;color:var(--white);font-weight:700;font-family:'Bebas Neue',sans-serif;letter-spacing:1px}
+
+/* SECTION */
+section{position:relative;z-index:1;padding:80px 60px;max-width:1200px;margin:0 auto;scroll-margin-top:64px}
+section.full{max-width:100%;padding:80px 0;border-top:1px solid var(--border)}
+section.full .inner{max-width:1200px;margin:0 auto;padding:0 60px}
+
+.sec-eye{font-size:12px;letter-spacing:3px;color:var(--cyan);margin-bottom:16px;
+display:flex;align-items:center;gap:8px}
+.sec-eye::before{content:'[';color:rgba(0,212,255,.4)}
+.sec-eye::after{content:']';color:rgba(0,212,255,.4)}
+.sec-h{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3.5rem);
+color:var(--white);letter-spacing:2px;margin-bottom:8px}
+.sec-h span{color:var(--cyan)}
+.sec-desc{font-size:14px;color:rgba(210,224,236,.75);line-height:1.8;max-width:560px;margin-bottom:56px}
+
+/* PRICING CARDS */
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:8px}
+
+.price-card{background:var(--card);border:1px solid var(--border);padding:0;overflow:hidden;
+position:relative;transition:.3s}
+.price-card:hover{border-color:rgba(0,212,255,.2)}
+.price-card.featured{border-color:var(--gold);box-shadow:0 0 40px rgba(240,192,64,.08)}
+
+.pc-top{padding:32px 32px 24px;border-bottom:1px solid var(--border)}
+.pc-badge{display:inline-block;padding:4px 12px;font-size:9px;letter-spacing:3px;
+text-transform:uppercase;margin-bottom:16px}
+.badge-basic{background:rgba(184,204,216,.06);color:rgba(210,224,236,.65);border:1px solid rgba(184,204,216,.1)}
+.badge-mid{background:rgba(0,212,255,.08);color:var(--cyan);border:1px solid rgba(0,212,255,.2)}
+.badge-premium{background:rgba(240,192,64,.1);color:var(--gold);border:1px solid rgba(240,192,64,.3)}
+
+.price-card h3{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:3px;color:var(--white);margin-bottom:8px}
+.price-tag{margin-bottom:8px}
+.price-amount{font-family:'Bebas Neue',sans-serif;font-size:56px;color:var(--white);line-height:1}
+.price-amount.featured-price{color:var(--gold)}
+.price-currency{font-size:18px;color:rgba(210,224,236,.65);margin-right:4px}
+.price-period{font-size:11px;letter-spacing:2px;color:rgba(210,224,236,.55)}
+.price-desc{font-size:13px;color:rgba(210,224,236,.65);line-height:1.7;margin-top:8px}
+
+.pc-body{padding:24px 32px}
+.feature-list{display:flex;flex-direction:column;gap:10px}
+.feat{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:rgba(210,224,236,.8);line-height:1.5}
+.feat-icon{flex-shrink:0;width:16px;margin-top:1px}
+.feat.yes .feat-icon{color:var(--green)}
+.feat.no .feat-icon{color:rgba(184,204,216,.2)}
+.feat.no{color:rgba(210,224,236,.45)}
+
+.pc-footer{padding:24px 32px;border-top:1px solid var(--border)}
+.btn-card{display:block;text-align:center;padding:14px;font-family:'Syne',sans-serif;
+font-weight:700;font-size:11px;letter-spacing:3px;text-transform:uppercase;
+text-decoration:none;transition:.3s;cursor:pointer;border:none;width:100%}
+.btn-card.basic{background:rgba(184,204,216,.06);color:rgba(210,224,236,.65);border:1px solid rgba(184,204,216,.1)}
+.btn-card.basic:hover{background:rgba(184,204,216,.1);color:var(--text)}
+.btn-card.mid{background:rgba(0,212,255,.08);color:var(--cyan);border:1px solid rgba(0,212,255,.25)}
+.btn-card.mid:hover{background:rgba(0,212,255,.15)}
+.btn-card.premium{background:var(--gold);color:#000;font-weight:800}
+.btn-card.premium:hover{background:#f5d060}
+
+.recommended-tag{position:absolute;top:-1px;right:24px;
+background:var(--gold);color:#000;
+font-size:9px;letter-spacing:2px;font-weight:800;text-transform:uppercase;
+padding:6px 14px}
+
+/* REVISION TABLE */
+.rev-table{width:100%;border-collapse:collapse;margin-top:8px;table-layout:fixed}
+.rev-table th{background:var(--surface);padding:12px 14px;text-align:left;
+font-size:10px;letter-spacing:1px;color:rgba(210,225,240,.65);text-transform:uppercase;
+border-bottom:1px solid var(--border);overflow:hidden}
+.rev-table th:nth-child(1){width:34%}
+.rev-table th:nth-child(2){width:16%}
+.rev-table th:nth-child(3){width:16%}
+.rev-table th:nth-child(4){width:16%}
+.rev-table th:nth-child(5){width:18%}
+.rev-table td{padding:14px 14px;border-bottom:1px solid rgba(14,31,48,.8);
+font-size:13px;color:#cdd9e5;vertical-align:top;line-height:1.5;
+word-break:break-word;overflow-wrap:break-word}
+.rev-table tr:last-child td{border-bottom:none}
+.rev-table tr:hover td{background:rgba(0,212,255,.02)}
+
+.rev-tag{display:inline-block;padding:4px 8px;font-size:10px;letter-spacing:.5px;border-radius:0;font-weight:600;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis}
+.tag-free{background:rgba(0,255,136,.08);color:var(--green);border:1px solid rgba(0,255,136,.2)}
+.tag-paid{background:rgba(255,68,68,.08);color:var(--red);border:1px solid rgba(255,68,68,.2)}
+.tag-discuss{background:rgba(0,212,255,.08);color:var(--cyan);border:1px solid rgba(0,212,255,.2)}
+td strong{color:var(--white)}
+
+/* MAINTENANCE */
+.maint-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:8px}
+.maint-card{background:var(--card);border:1px solid var(--border);padding:36px 28px;transition:.3s}
+.maint-card:hover{border-color:rgba(0,212,255,.2);background:#0a1220}
+.maint-icon{font-size:32px;margin-bottom:16px}
+.maint-card h3{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:2px;
+color:var(--white);margin-bottom:8px}
+.maint-price{font-family:'Bebas Neue',sans-serif;font-size:36px;color:var(--cyan);margin-bottom:12px}
+.maint-price small{font-size:16px;color:rgba(210,224,236,.65)}
+.maint-list{display:flex;flex-direction:column;gap:8px;margin-top:16px}
+.maint-item{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:rgba(210,224,236,.75);line-height:1.5}
+.maint-item::before{content:'→';color:var(--cyan);flex-shrink:0}
+
+/* UPGRADE */
+.upgrade-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-top:8px}
+.upg-card{background:var(--card);border:1px solid var(--border);padding:28px 28px;
+display:flex;gap:20px;align-items:flex-start;transition:.3s}
+.upg-card:hover{border-color:rgba(0,212,255,.15);background:#0a1220}
+.upg-icon{font-size:28px;flex-shrink:0;margin-top:4px}
+.upg-card h4{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:2px;color:var(--white);margin-bottom:6px}
+.upg-card p{font-size:13px;color:rgba(210,224,236,.7);line-height:1.7}
+.upg-price{display:inline-block;margin-top:12px;padding:4px 12px;
+background:rgba(0,212,255,.07);border:1px solid rgba(0,212,255,.2);
+font-size:10px;color:var(--cyan);letter-spacing:2px}
+
+/* PROCESS */
+.process-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;margin-top:8px;position:relative}
+.process-steps::before{content:'';position:absolute;top:32px;left:10%;right:10%;
+height:1px;background:linear-gradient(to right,transparent,var(--cyan),transparent);opacity:.2}
+.step{background:var(--card);border:1px solid var(--border);padding:28px 20px;text-align:center;
+position:relative;z-index:1;transition:.3s}
+.step:hover{border-color:rgba(0,212,255,.2)}
+.step-num{font-family:'Bebas Neue',sans-serif;font-size:42px;color:rgba(0,212,255,.12);line-height:1;margin-bottom:12px}
+.step h4{font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:2px;color:var(--white);margin-bottom:8px}
+.step p{font-size:13px;color:rgba(210,224,236,.8);line-height:1.75}
+.step-time{display:inline-block;margin-top:12px;padding:3px 10px;
+background:rgba(0,212,255,.06);border:1px solid rgba(0,212,255,.15);
+font-size:9px;color:var(--cyan);letter-spacing:2px}
+
+/* GUARANTEE */
+.guarantee{background:var(--surface);border:1px solid rgba(0,255,136,.15);padding:40px;
+margin-top:56px;display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:center}
+.guarantee-icon{font-size:48px}
+.guarantee h3{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:2px;color:var(--green);margin-bottom:10px}
+.guarantee p{font-size:14px;color:rgba(210,224,236,.75);line-height:1.8}
+
+/* CTA */
+.cta-block{position:relative;z-index:1;
+background:linear-gradient(135deg,rgba(0,212,255,.05),rgba(0,255,136,.03));
+border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+padding:80px 60px;text-align:center}
+.cta-block h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,6vw,5rem);
+color:var(--white);letter-spacing:3px;margin-bottom:16px}
+.cta-block h2 span{color:var(--gold)}
+.cta-block p{font-size:15px;color:rgba(210,224,236,.75);margin-bottom:40px;line-height:1.8}
+.cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn-gold{background:var(--gold);color:#000;padding:16px 40px;
+font-family:'Syne',sans-serif;font-weight:800;font-size:12px;letter-spacing:3px;
+text-transform:uppercase;text-decoration:none;display:inline-block;transition:.3s;border:none;cursor:pointer}
+.btn-gold:hover{background:#f5d060;transform:translateX(4px)}
+.btn-ghost{
+background:rgba(3,7,13,.85);
+border:1px solid rgba(0,212,255,.18);
+color:rgba(184,204,216,.55);
+padding:16px 40px;
+font-family:'Syne',sans-serif;
+font-size:12px;letter-spacing:3px;text-transform:uppercase;
+text-decoration:none;display:inline-block;transition:.3s;
+box-shadow:none}
+.btn-ghost:hover{
+background:rgba(0,212,255,.08);
+border-color:var(--cyan);
+color:var(--cyan);
+box-shadow:0 0 16px rgba(0,212,255,.12)}
+.btn-ghost:active{
+background:rgba(0,212,255,.12);
+border-color:var(--cyan);
+color:var(--cyan)}
+
+footer{position:relative;z-index:1;background:var(--surface);
+border-top:1px solid var(--border);padding:40px 60px;
+display:flex;align-items:center;justify-content:center}
+.footer-logo{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:3px;color:var(--white)}
+.footer-logo span{color:var(--cyan)}
+.footer-note{font-size:9px;letter-spacing:2px;color:rgba(184,204,216,.2)}
+
+.divider{height:1px;background:var(--border);margin:0}
+
+
+/* ══════════ ENHANCED MOBILE APP ══════════ */
+
+/* BASE FONT INCREASE */
+body { font-size: 16px !important; }
+
+/* SMOOTH ANIMATIONS GLOBAL */
+*, *::before, *::after {
+  transition: background .2s ease, border-color .2s ease, color .2s ease, transform .2s ease, opacity .2s ease;
+  -webkit-tap-highlight-color: rgba(0,212,255,.1);
+}
+
+/* TOUCH RIPPLE EFFECT */
+.btn-gold, .btn-ghost, .btn-card, .style-opt, .pkg-opt, .maint-card, .p-card, .price-card {
+  position: relative; overflow: hidden;
+}
+.btn-gold::after, .btn-ghost::after, .btn-card::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: rgba(255,255,255,.08);
+  opacity: 0; transform: scale(0);
+  border-radius: 50%;
+  transition: transform .4s ease, opacity .4s ease;
+}
+.btn-gold:active::after, .btn-ghost:active::after, .btn-card:active::after {
+  opacity: 1; transform: scale(2);
+  transition: 0s;
+}
+
+/* ACTIVE STATES FOR TOUCH */
+.price-card:active { transform: scale(.98) !important; }
+.maint-card:active { transform: scale(.98) !important; }
+.upg-card:active { background: #0d1825 !important; }
+.feat:hover { color: rgba(184,204,216,.9) !important; }
+
+/* SCROLLBAR HIDE ON MOBILE */
+::-webkit-scrollbar { width: 0; height: 0; }
+
+input, textarea, button, select {
+  -webkit-appearance: none;
+  border-radius: 0 !important;
+  font-size: 16px !important; /* Prevent iOS zoom */
+}
+
+/* PWA STANDALONE */
+@media (display-mode: standalone) {
+  nav {
+    padding-top: max(env(safe-area-inset-top), 14px) !important;
+    height: auto !important;
+  }
+  body { padding-bottom: env(safe-area-inset-bottom, 20px); }
+}
+
+/* ── TABLET 769–1024px ── */
+@media (max-width: 1024px) and (min-width: 769px) {
+  nav { padding: 16px 28px !important; }
+  section { padding: 56px 28px !important; }
+  .pricing-grid { grid-template-columns: 1fr !important; }
+  .process-steps { grid-template-columns: repeat(3,1fr) !important; }
+  .process-steps::before { display:none !important; }
+  .maint-grid { grid-template-columns: 1fr 1fr !important; }
+  .upgrade-grid { grid-template-columns: 1fr 1fr !important; }
+  .cta-block { padding: 56px 28px !important; }
+  footer { padding: 28px 28px !important; }
+  .rev-table th, .rev-table td { padding: 12px 14px !important; font-size: 12px !important; }
+}
+
+/* ── MOBILE ≤768px ── */
+@media (max-width: 768px) {
+
+  /* NAV */
+  nav { padding: 10px 18px !important; }
+  .logo { font-size: 20px !important; letter-spacing: 3px !important; }
+  .nav-tag { display: none !important; }
+  #burgerBtn { display: flex !important; }
+  .burger-line {
+    display: block;
+    width: 24px; height: 2px;
+    background: var(--cyan);
+    border-radius: 2px;
+    transition: .3s;
+  }
+
+  /* HERO */
+  .hero { padding: 20px 18px 40px !important; }
+  h1 { font-size: clamp(2.8rem, 11.5vw, 5.5rem) !important; line-height: .92 !important; margin-bottom: 20px !important; }
+  .hero-list { margin-bottom: 24px !important; gap: 8px !important; }
+  .hero-list li { font-size: 14px !important; }
+  .doc-meta { gap: 14px !important; flex-direction: column !important; }
+  .meta-val { font-size: 15px !important; }
+  .meta-label { font-size: 10px !important; }
+
+  /* SECTIONS */
+  section { padding: 52px 18px !important; }
+  .sec-eye { font-size: 10px !important; }
+  .sec-h { font-size: clamp(2rem, 9vw, 2.8rem) !important; letter-spacing: 1px !important; }
+  .sec-desc { font-size: 14px !important; margin-bottom: 28px !important; line-height: 1.7 !important; }
+
+  /* PRICING — FULL WIDTH CARDS */
+  .pricing-grid { grid-template-columns: 1fr !important; gap: 12px !important; }
+  .price-card { border-radius: 0 !important; }
+  .pc-top { padding: 28px 20px 20px !important; }
+  .pc-badge { font-size: 10px !important; padding: 5px 12px !important; }
+  .price-card h3 { font-size: 22px !important; }
+  .price-amount { font-size: 52px !important; }
+  .price-currency { font-size: 20px !important; }
+  .price-desc { font-size: 13px !important; line-height: 1.7 !important; }
+  .pc-body { padding: 20px 20px !important; }
+  .feat { font-size: 13px !important; gap: 10px !important; }
+  .pc-footer { padding: 20px !important; }
+  .btn-card { padding: 16px !important; font-size: 12px !important; letter-spacing: 2px !important; }
+  .recommended-tag { font-size: 9px !important; padding: 5px 12px !important; }
+
+  /* PROCESS — 2 COLS */
+  .process-steps {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+  }
+  .process-steps::before { display: none !important; }
+  .step { padding: 20px 14px !important; }
+  .step-num { font-size: 32px !important; margin-bottom: 8px !important; }
+  .step h4 { font-size: 13px !important; letter-spacing: 1px !important; margin-bottom: 6px !important; }
+  .step p { font-size: 11px !important; line-height: 1.5 !important; }
+  .step-time { font-size: 9px !important; padding: 3px 8px !important; }
+
+  /* REVISION TABLE — SCROLL */
+  .rev-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .rev-table { min-width: 600px !important; font-size: 12px !important; }
+  .rev-table th { padding: 12px 14px !important; font-size: 9px !important; }
+  .rev-table td { padding: 12px 14px !important; font-size: 12px !important; }
+  .rev-tag { font-size: 9px !important; padding: 3px 8px !important; }
+
+  /* MAINTENANCE — STACK */
+  .maint-grid { grid-template-columns: 1fr !important; gap: 8px !important; }
+  .maint-card { padding: 28px 20px !important; }
+  .maint-icon { font-size: 28px !important; margin-bottom: 12px !important; }
+  .maint-card h3 { font-size: 18px !important; }
+  .maint-price { font-size: 32px !important; }
+  .maint-item { font-size: 13px !important; }
+
+  /* UPGRADES — STACK */
+  .upgrade-grid { grid-template-columns: 1fr !important; gap: 8px !important; }
+  .upg-card { padding: 20px 18px !important; gap: 14px !important; }
+  .upg-icon { font-size: 24px !important; }
+  .upg-card h4 { font-size: 16px !important; }
+  .upg-card p { font-size: 13px !important; }
+  .upg-price { font-size: 11px !important; margin-top: 10px !important; }
+
+  /* GUARANTEE */
+  .guarantee {
+    grid-template-columns: 1fr !important;
+    padding: 24px 18px !important;
+    gap: 14px !important;
+  }
+  .guarantee-icon { font-size: 36px !important; }
+  .guarantee h3 { font-size: 20px !important; }
+  .guarantee p { font-size: 13px !important; }
+
+  /* CTA */
+  .cta-block { padding: 60px 18px !important; }
+  .cta-block h2 { font-size: clamp(2.8rem, 9vw, 4rem) !important; }
+  .cta-block p { font-size: 14px !important; margin-bottom: 32px !important; }
+  .cta-btns { flex-direction: column !important; gap: 10px !important; }
+  .btn-gold { width: 100% !important; padding: 18px !important; font-size: 13px !important; letter-spacing: 2px !important; }
+  .btn-ghost { width: 100% !important; padding: 16px !important; font-size: 12px !important; letter-spacing: 2px !important; }
+
+  /* FOOTER */
+  footer { padding: 32px 20px !important; }
+
+  /* PASSWORD SCREEN */
+  #passScreen { padding: 24px 18px !important; }
+  #passScreen input { font-size: 20px !important; letter-spacing: 6px !important; }
+
+  /* MODAL BRIEF — COMPACT CARD */
+  #briefModal > div > div:nth-child(2) {
+    padding: 12px !important;
+  }
+  #briefModal > div > div:nth-child(2) > div {
+    max-width: 100% !important;
+    padding: 24px 16px 40px !important;
+  }
+  .bq {
+    grid-template-columns: 32px 1fr !important;
+    padding: 18px 14px !important;
+    gap: 10px !important;
+  }
+  .bq-num { font-size: 20px !important; }
+  .bq-label { font-size: 14px !important; font-weight: 700 !important; }
+  .bq-hint { font-size: 11px !important; margin-bottom: 10px !important; }
+  .bq-input {
+    font-size: 16px !important;
+    padding: 12px 14px !important;
+    min-height: 48px !important;
+  }
+  .style-opt {
+    font-size: 12px !important;
+    padding: 10px 14px !important;
+    min-height: 44px !important;
+  }
+  .pkg-opt {
+    font-size: 12px !important;
+    padding: 12px 16px !important;
+    min-height: 48px !important;
+    flex: 1 !important;
+    text-align: center !important;
+  }
+  #pkgOptions { flex-direction: column !important; }
+
+  /* MODAL ACTION BUTTONS */
+  #briefModal button[onclick*="Email"],
+  #briefModal button[onclick*="PDF"],
+  #briefModal button[onclick*="copy"],
+  #briefModal button[onclick*="close"] {
+    min-height: 52px !important;
+    font-size: 13px !important;
+  }
+
+
+
+  /* MODAL QUESTION — COMPACT CARD */
+  #questionModal > div > div:nth-child(2) {
+    padding: 12px !important;
+  }
+  #questionModal > div > div:nth-child(2) > div {
+    max-width: 100% !important;
+    padding: 24px 16px 40px !important;
+  }
+  #questionModal input,
+  #questionModal textarea {
+    font-size: 16px !important;
+    min-height: 48px !important;
+    padding: 12px 14px !important;
+  }
+  #qPkgOptions { flex-direction: column !important; }
+  #qPkgOptions .style-opt { min-height: 48px !important; text-align: center !important; }
+
+  /* MODAL HEADER TEXT */
+  #briefModal [style*="Bebas Neue"],
+  #questionModal [style*="Bebas Neue"] {
+    font-size: clamp(2.5rem, 9vw, 3.5rem) !important;
+  }
+}
+
+/* ── SMALL PHONES ≤390px ── */
+@media (max-width: 390px) {
+  h1 { font-size: 2.8rem !important; }
+  .sec-h { font-size: 1.9rem !important; }
+  .price-amount { font-size: 44px !important; }
+  section { padding: 44px 14px !important; }
+  nav { padding: 12px 14px !important; }
+  .hero { padding: 64px 14px 36px !important; }
+}
+
+/* ══════════ MOBILE ADAPTIVE ══════════ */
+
+@media (max-width: 480px) {
+  /* PROCESS → single column on small phones */
+  .process-steps { grid-template-columns: 1fr !important }
+
+  /* COUNTERS → 2x2 */
+  .counters { grid-template-columns: 1fr 1fr !important }
+  .metric { border-right: none !important; border-bottom: 1px solid var(--border) !important }
+
+  /* PRICING features font */
+  .feat { font-size: 11px !important }
+  .price-amount { font-size: 44px !important }
+}
+
+/* PWA / App-like feel */
+
+/* ── MODAL CLOSE BUTTON ── */
+.modal-close-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 10;
+  background: rgba(3,7,13,.95);
+  border: 1px solid rgba(0,212,255,.4);
+  color: var(--cyan);
+  font-size: 20px;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+  line-height: 1;
+  font-weight: 300;
+  transition: background .15s ease, border-color .15s ease;
+  -webkit-appearance: none;
+  outline: none;
+  box-shadow: none;
+  text-shadow: none;
+}
+.modal-close-btn:hover {
+  background: rgba(0,212,255,.08);
+  border-color: rgba(0,212,255,.75);
+}
+.modal-close-btn:active {
+  background: rgba(0,212,255,.15);
+  border-color: var(--cyan);
+  transform: scale(.94);
+}
+
+
+/* ══════════ MODAL BASE STYLES ══════════ */
+
+/* Overlay */
+#briefModal, #questionModal {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Картка модалу */
+#briefModal > div,
+#questionModal > div {
+  background: var(--card);
+  border: 1px solid var(--border);
+}
+
+/* Заголовок модалу */
+.modal-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3rem, 7vw, 5rem);
+  color: var(--white);
+  letter-spacing: 2px;
+  line-height: 1;
+  margin-bottom: 20px;
+  margin-right: 60px;
+}
+.modal-title span { color: var(--cyan); }
+
+/* Пакет */
+.modal-pkg-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding: 9px 20px;
+  background: rgba(0,212,255,.05);
+  border: 1px solid rgba(0,212,255,.18);
+}
+.modal-pkg-bar .pkg-lbl {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: rgba(210,224,236,.5);
+  text-transform: uppercase;
+}
+.modal-pkg-bar .pkg-val {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: var(--gold);
+}
+
+/* Опис під заголовком */
+.modal-desc {
+  font-size: 14px;
+  color: rgba(210,224,236,.65);
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+
+/* BQ — блок питання */
+.bq {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 28px 28px 24px;
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 16px;
+  align-items: start;
+  margin-bottom: 2px;
+  transition: border-color .2s;
+}
+.bq:hover { border-color: rgba(0,212,255,.12); }
+
+.bq-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 36px;
+  color: rgba(0,212,255,.18);
+  line-height: 1;
+  padding-top: 2px;
+}
+.bq-body { display: flex; flex-direction: column; gap: 0; }
+.bq-label {
+  font-family: 'Syne', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+.bq-hint {
+  font-size: 13px;
+  color: rgba(210,224,236,.45);
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+.bq-input {
+  width: 100%;
+  background: rgba(0,0,0,.25);
+  border: 1px solid rgba(14,31,48,1);
+  color: var(--white);
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  padding: 13px 16px;
+  resize: vertical;
+  line-height: 1.6;
+  outline: none;
+  transition: border-color .2s, background .2s;
+  border-radius: 0;
+}
+.bq-input:focus {
+  border-color: rgba(0,212,255,.35);
+  background: rgba(0,212,255,.03);
+}
+.bq-input::placeholder { color: rgba(210,224,236,.3); }
+
+/* Style / pkg options */
+.style-opt, .pkg-opt {
+  background: rgba(184,204,216,.05);
+  border: 1px solid rgba(184,204,216,.1);
+  color: rgba(210,224,236,.6);
+  padding: 9px 18px;
+  font-family: 'Syne', sans-serif;
+  font-size: 12px;
+  letter-spacing: .5px;
+  cursor: pointer;
+  transition: border-color .2s, color .2s, background .2s;
+  border-radius: 0;
+}
+.style-opt:hover { border-color: rgba(0,212,255,.3); color: var(--cyan); }
+.style-opt.active { background: rgba(0,212,255,.09); border-color: var(--cyan); color: var(--cyan); }
+.pkg-opt:hover { border-color: rgba(240,192,64,.3); color: var(--gold); }
+.pkg-opt.active { background: rgba(240,192,64,.09); border-color: var(--gold); color: var(--gold); }
+
+/* Action buttons inside modal */
+.modal-actions { margin-top: 28px; display: flex; flex-direction: column; gap: 10px; }
+
+/* Question form fields */
+.qfield {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 22px 28px;
+  margin-bottom: 2px;
+}
+.qfield-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+.qfield-hint {
+  font-size: 12px;
+  color: rgba(210,224,236,.45);
+  margin-bottom: 12px;
+}
+.qfield input, .qfield textarea {
+  width: 100%;
+  background: rgba(0,0,0,.25);
+  border: 1px solid rgba(14,31,48,1);
+  color: var(--white);
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  padding: 12px 16px;
+  outline: none;
+  transition: border-color .2s;
+  border-radius: 0;
+}
+.qfield input:focus, .qfield textarea:focus { border-color: rgba(0,212,255,.35); }
+.qfield textarea { resize: vertical; line-height: 1.6; }
+.qfield input::placeholder, .qfield textarea::placeholder { color: rgba(210,224,236,.3); }
+
+/* Mobile modal adjustments */
+@media (max-width: 768px) {
+  #briefModal, #questionModal { padding: 16px 12px !important; }
+  #briefModal > div, #questionModal > div { padding: 28px 18px 36px !important; }
+  .modal-title { font-size: clamp(2.6rem, 10vw, 3.5rem) !important; margin-right: 48px; }
+  .bq { grid-template-columns: 40px 1fr !important; padding: 20px 16px 18px !important; gap: 12px !important; }
+  .bq-num { font-size: 26px !important; }
+  .bq-label { font-size: 15px !important; }
+  .bq-hint { font-size: 12px !important; margin-bottom: 10px !important; }
+  .bq-input { font-size: 16px !important; padding: 11px 14px !important; }
+  .qfield { padding: 18px 16px !important; }
+  .qfield input, .qfield textarea { font-size: 16px !important; }
+}
+/* Better tap targets on mobile */
+@media (hover: none) {
+  .btn-card, .btn-gold, .btn-ghost, .btn-cyber { min-height: 48px }
+</style>
+</head>
+<body>
+
+<!-- ══════════ PASSWORD SCREEN ══════════ -->
+<div id="passScreen" style="position:fixed;inset:0;z-index:99999;display:flex;
+background:#03070d;flex-direction:column;align-items:center;justify-content:center;
+font-family:'Syne',sans-serif;padding:20px">
+  <div style="max-width:420px;width:100%;text-align:center">
+
+    <!-- LOGO -->
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:6px;
+    color:#e8f4ff;margin-bottom:8px">DRAGON<span style="color:#00d4ff">FLY</span></div>
+    <div style="font-size:9px;letter-spacing:4px;color:rgba(210,224,236,.55);margin-bottom:48px">
+      КОНФІДЕНЦІЙНИЙ ДОКУМЕНТ
+    </div>
+
+    <!-- LOCK ICON -->
+    <div style="width:72px;height:72px;border-radius:50%;
+    background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.2);
+    display:flex;align-items:center;justify-content:center;
+    margin:0 auto 32px;font-size:28px">🔐</div>
+
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:24px;
+    letter-spacing:3px;color:#e8f4ff;margin-bottom:8px">ВВЕДІТЬ ПАРОЛЬ</div>
+    <div style="font-size:13px;color:rgba(210,224,236,.6);
+    letter-spacing:1px;margin-bottom:32px;line-height:1.7">
+      Документ захищений.<br>Зверніться до Pavlo Fedoniuk для отримання доступу.
+    </div>
+
+    <!-- INPUT -->
+    <input id="passInput" type="password" placeholder="••••••••"
+    style="width:100%;background:rgba(0,212,255,.04);border:1px solid rgba(14,31,48,1);
+    color:#e8f4ff;font-family:'Syne',sans-serif;font-size:18px;letter-spacing:4px;
+    padding:16px 20px;text-align:center;outline:none;margin-bottom:12px;transition:.3s"
+    onfocus="this.style.borderColor='rgba(0,212,255,.4)'"
+    onblur="this.style.borderColor='rgba(14,31,48,1)'"
+    onkeydown="if(event.key==='Enter')checkPass()">
+
+    <div id="passError" style="display:none;font-size:11px;color:#ff4444;
+    letter-spacing:2px;margin-bottom:12px">✕ НЕВІРНИЙ ПАРОЛЬ</div>
+
+    <button onclick="checkPass()"
+    style="width:100%;background:#00d4ff;color:#000;padding:16px;
+    font-family:'Syne',sans-serif;font-weight:800;font-size:12px;
+    letter-spacing:3px;text-transform:uppercase;border:none;cursor:pointer;transition:.3s"
+    onmouseover="this.style.background='#33ddff'"
+    onmouseout="this.style.background='#00d4ff'">
+      УВІЙТИ →
+    </button>
+
+    <div style="margin-top:32px;font-size:10px;color:rgba(184,204,216,.2);letter-spacing:2px">
+      PAVLO FEDONIUK · ARCHITECT DEV · 2026
+    </div>
+  </div>
+</div>
+
+
+
+<nav>
+  <div class="logo">DRAGON<span>FLY</span> КБ</div>
+  
+  <button id="burgerBtn" onclick="toggleMenu()" aria-label="Меню"
+  style="flex-direction:column;justify-content:center;gap:5px;
+  background:none;border:none;cursor:pointer;padding:8px;z-index:200;width:40px;height:40px">
+    <span class="burger-line"></span>
+    <span class="burger-line"></span>
+    <span class="burger-line"></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div id="mobileMenu" style="display:none;position:fixed;inset:0;z-index:150;
+background:rgba(3,7,13,.98);backdrop-filter:blur(24px);
+flex-direction:column;align-items:center;justify-content:center;padding:40px 24px">
+  <button onclick="toggleMenu()" style="position:absolute;top:20px;right:20px;
+  background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.2);
+  color:var(--cyan);font-size:20px;width:44px;height:44px;cursor:pointer">✕</button>
+
+  <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:5px;
+  color:var(--white);margin-bottom:40px;text-align:center">
+    DRAGON<span style="color:var(--cyan)">FLY</span> КБ
+  </div>
+
+  <div style="display:flex;flex-direction:column;width:100%;max-width:340px;gap:2px;margin-bottom:32px">
+    <button onclick="navTo('section-pricing')" style="display:flex;align-items:center;width:100%;
+    padding:18px 20px;background:var(--card);border:1px solid var(--border);
+    color:var(--white);text-decoration:none;font-family:'Bebas Neue',sans-serif;
+    font-size:17px;letter-spacing:2px;transition:.3s;cursor:pointer;text-align:left;"
+    onmouseover="this.style.borderColor='rgba(0,212,255,.3)'"
+    onmouseout="this.style.borderColor='var(--border)'">
+      <span style="color:var(--cyan);margin-right:14px;font-size:11px;letter-spacing:2px">01</span>Пакети розробки
+    </button>
+    <button onclick="navTo('section-process')" style="display:flex;align-items:center;width:100%;
+    padding:18px 20px;background:var(--card);border:1px solid var(--border);
+    color:var(--white);text-decoration:none;font-family:'Bebas Neue',sans-serif;
+    font-size:17px;letter-spacing:2px;transition:.3s;cursor:pointer;text-align:left;"
+    onmouseover="this.style.borderColor='rgba(0,212,255,.3)'"
+    onmouseout="this.style.borderColor='var(--border)'">
+      <span style="color:var(--cyan);margin-right:14px;font-size:11px;letter-spacing:2px">02</span>Процес роботи
+    </button>
+    <button onclick="navTo('section-revisions')" style="display:flex;align-items:center;width:100%;
+    padding:18px 20px;background:var(--card);border:1px solid var(--border);
+    color:var(--white);text-decoration:none;font-family:'Bebas Neue',sans-serif;
+    font-size:17px;letter-spacing:2px;transition:.3s;cursor:pointer;text-align:left;"
+    onmouseover="this.style.borderColor='rgba(0,212,255,.3)'"
+    onmouseout="this.style.borderColor='var(--border)'">
+      <span style="color:var(--cyan);margin-right:14px;font-size:11px;letter-spacing:2px">03</span>Правки і зміни
+    </button>
+    <button onclick="navTo('section-maintenance')" style="display:flex;align-items:center;width:100%;
+    padding:18px 20px;background:var(--card);border:1px solid var(--border);
+    color:var(--white);text-decoration:none;font-family:'Bebas Neue',sans-serif;
+    font-size:17px;letter-spacing:2px;transition:.3s;cursor:pointer;text-align:left;"
+    onmouseover="this.style.borderColor='rgba(0,212,255,.3)'"
+    onmouseout="this.style.borderColor='var(--border)'">
+      <span style="color:var(--cyan);margin-right:14px;font-size:11px;letter-spacing:2px">04</span>Обслуговування
+    </button>
+    <button onclick="navTo('section-upgrades')" style="display:flex;align-items:center;width:100%;
+    padding:18px 20px;background:var(--card);border:1px solid var(--border);
+    color:var(--white);text-decoration:none;font-family:'Bebas Neue',sans-serif;
+    font-size:17px;letter-spacing:2px;transition:.3s;cursor:pointer;text-align:left;"
+    onmouseover="this.style.borderColor='rgba(0,212,255,.3)'"
+    onmouseout="this.style.borderColor='var(--border)'">
+      <span style="color:var(--cyan);margin-right:14px;font-size:11px;letter-spacing:2px">05</span>Модернізація
+    </button>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:10px;width:100%;max-width:340px">
+    <button onclick="toggleMenu();setTimeout(openBrief,100)"
+    style="background:var(--gold);color:#000;padding:16px;
+    font-family:'Syne',sans-serif;font-weight:800;font-size:12px;
+    letter-spacing:3px;text-transform:uppercase;border:none;cursor:pointer;width:100%">
+      ЗАПОВНИТИ БРИФ →
+    </button>
+    <button onclick="toggleMenu();setTimeout(openQuestion,100)"
+    style="background:rgba(3,7,13,.9);border:1px solid rgba(0,212,255,.2);
+    color:rgba(184,204,216,.55);padding:14px;
+    font-family:'Syne',sans-serif;font-size:12px;
+    letter-spacing:3px;text-transform:uppercase;cursor:pointer;width:100%">
+      ЗАДАТИ ПИТАННЯ
+    </button>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="doc-label">Офіційний документ</div>
+  <h1>КОМЕРЦІЙНА<br><span>ПРОПОЗИЦІЯ</span></h1>
+  <ul class="hero-list">
+    <li>Розробка корпоративного сайту для КБ Dragonfly</li>
+    <li>Запуск за 7–14 днів · Фіксована ціна після брифу</li>
+    <li>Мобільна адаптація · HTTPS · SEO · Мультимовність</li>
+    <li>AI-реклама · Агентна автоматизація · Підтримка</li>
+    <li>Гарантія якості 14 днів · Architect Dev</li>
+  </ul>
+  <div class="doc-meta">
+    <div class="meta-item"><div class="meta-label">Клієнт</div><div class="meta-val">КБ Dragonfly</div></div>
+    <div class="meta-item"><div class="meta-label">Виконавець</div><div class="meta-val">Pavlo Fedoniuk · Architect Dev</div></div>
+    <div class="meta-item"><div class="meta-label">Дата</div><div class="meta-val">Березень 2026</div></div>
+    <div class="meta-item"><div class="meta-label">Валідність</div><div class="meta-val">від 13 днів</div></div>
+  </div>
+</div>
+
+<!-- PRICING -->
+<section id="section-pricing">
+  <div class="sec-eye">01 · Пакети розробки</div>
+  <div class="sec-h">ВАРТІСТЬ <span>САЙТУ</span></div>
+  <p class="sec-desc">Три варіанти під різний рівень амбіцій. Після заповнення брифу — фінальна ціна фіксується і не змінюється.</p>
+
+  <div class="pricing-grid">
+
+    <!-- V1 BASIC -->
+    <div class="price-card">
+      <div class="pc-top">
+        <div class="pc-badge badge-basic">Базовий</div>
+        <h3>СТАТИЧНИЙ</h3>
+        <div class="price-tag">
+          <span class="price-currency">₴</span><span class="price-amount">18 000</span>
+          <div class="price-period">одноразово</div>
+        </div>
+        <p class="price-desc">Простий статичний сайт-візитка. Без анімацій. Підходить як тимчасове рішення або мінімальна присутність в мережі.</p>
+      </div>
+      <div class="pc-body">
+        <div class="feature-list">
+          <div class="feat yes"><span class="feat-icon">✓</span>До 5 розділів</div>
+          <div class="feat yes"><span class="feat-icon">✓</span>Адаптація під мобільний</div>
+          <div class="feat yes"><span class="feat-icon">✓</span>Каталог 6 продуктів</div>
+          <div class="feat yes"><span class="feat-icon">✓</span>Форма контакту / Telegram-кнопка</div>
+          <div class="feat yes"><span class="feat-icon">✓</span>1 мовна версія (UA)</div>
+          <div class="feat no"><span class="feat-icon">✕</span>Анімації та інтерактив</div>
+          <div class="feat no"><span class="feat-icon">✕</span>Кастомний курсор і ефекти</div>
+          <div class="feat no"><span class="feat-icon">✕</span>Термінальний блок</div>
+          <div class="feat no"><span class="feat-icon">✕</span>Мультимовність</div>
+          <div class="feat no"><span class="feat-icon">✕</span>Пріоритетна підтримка</div>
+        </div>
+      </div>
+      <div class="pc-footer">
+        <button class="btn-card basic" onclick="openBriefWithPkg('Базовий — ₴18 000')">Обрати базовий →</button>
+      </div>
+    </div>
+
+    <!-- V2 ADAPTIVE -->
+    <div class="price-card">
+      <div class="pc-top">
+        <div class="pc-badge badge-mid">Адаптивний</div>
+        <h3>ДИНАМІЧНИЙ</h3>
+        <div class="price-tag">
+          <span class="price-currency">₴</span><span class="price-amount">38 000</span>
+          <div class="price-period">одноразово</div>
+        </div>
+        <p class="price-desc">Анімації при скролі, гексагональна графіка, плавні переходи. Виглядає сучасно і професійно.</p>
+      </div>
+      <div class="pc-body">
+        <div class="feature-list">
+          <div class="feat yes"><span class="feat-icon">✓</span>До 8 розділів</div>
+          <div class="feat yes"><span class="feat-icon">✓</span>Адаптація під мобільний</div>
+          <div class="feat yes"><span class="feat-icon">✓</span>Каталог 6 продуктів з тегами</div>
+          <div class="feat yes"><span class="feat-icon">✓</span>Анімації при скролі (reveal)</div>
+          <div class="feat yes"><span class="feat-icon">✓</span>Графічні елементи (гекса, grid)</div>
+          <div class="feat yes"><span class="feat-icon">✓</span>2 мовних версії (UA + EN)</div>
+          <div class="feat yes"><span class="feat-icon">✓</span>Форма + Telegram-інтеграція</div>
+          <div class="feat no"><span class="feat-icon">✕</span>Кастомний курсор і radar ефект</div>
+          <div class="feat no"><span class="feat-icon">✕</span>Термінальний блок і scanline</div>
+          <div class="feat no"><span class="feat-icon">✕</span>Пріоритетна підтримка</div>
+        </div>
+      </div>
+      <div class="pc-footer">
+        <button class="btn-card mid" onclick="openBriefWithPkg('Динамічний — ₴38 000')">Обрати динамічний →</button>
+      </div>
+    </div>
+
+    <!-- V3 PREMIUM -->
+    <div class="price-card featured">
+      <div class="recommended-tag">⭐ Рекомендовано</div>
+      <div class="pc-top">
+        <div class="pc-badge badge-premium">Преміум</div>
+        <h3>ІНТЕРАКТИВНИЙ</h3>
+        <div class="price-tag">
+          <span class="price-currency">₴</span><span class="price-amount featured-price">78 000</span>
+          <div class="price-period">одноразово</div>
+        </div>
+        <p class="price-desc">Повний cyber-defense досвід. Рівень Rheinmetall, SHIELD AI. Сайт який запам'ятовують і показують партнерам.</p>
+      </div>
+      <div class="pc-body">
+        <div class="feature-list">
+          <div class="feat yes"><span class="feat-icon">✓</span>До 12 розділів</div>
+          <div class="feat yes"><span class="feat-icon">✓</span>Повна мобільна адаптація</div>
+          <div class="feat yes"><span class="feat-icon">✓</span>Каталог з фільтрами і деталями</div>
+          <div class="feat yes"><span class="feat-icon">✓</span>Кастомний курсор + radar sweep</div>
+          <div class="feat yes"><span class="feat-icon">✓</span>Scanline + terminal блок</div>
+          <div class="feat yes"><span class="feat-icon">✓</span>3 мови (UA + EN + PL)</div>
+          <div class="feat yes"><span class="feat-icon">✓</span>Анімований hero з ефектами</div>
+          <div class="feat yes"><span class="feat-icon">✓</span>Форма + Telegram + Email</div>
+          <div class="feat yes"><span class="feat-icon">✓</span>SEO базова оптимізація</div>
+          <div class="feat yes"><span class="feat-icon">✓</span>Пріоритетна підтримка 3 міс</div>
+        </div>
+      </div>
+      <div class="pc-footer">
+        <button class="btn-card premium" onclick="openBriefWithPkg('Преміум — ₴78 000')">Обрати преміум →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PROCESS -->
+<section id="section-process">
+  <div class="sec-eye">02 · Процес роботи</div>
+  <div class="sec-h">ЯК МИ <span>ПРАЦЮЄМО</span></div>
+  <p class="sec-desc">Від брифу до готового сайту — прозорий процес без сюрпризів.</p>
+
+  <div class="process-steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <h4>БРИФ</h4>
+      <p>Заповнюєш бриф — ми отримуємо повне розуміння проекту</p>
+      <span class="step-time">1–2 дні</span>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <h4>АВАНС</h4>
+      <p>50% передоплата. Фіксуємо ціну і починаємо роботу</p>
+      <span class="step-time">День 1</span>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <h4>РОЗРОБКА</h4>
+      <p>Дизайн і верстка. Показуємо проміжні результати</p>
+      <span class="step-time">7–14 днів</span>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <h4>ПРАВКИ</h4>
+      <p>Безкоштовні правки в межах пакету. Узгоджуємо фінал</p>
+      <span class="step-time">3–5 днів</span>
+    </div>
+    <div class="step">
+      <div class="step-num">05</div>
+      <h4>ЗДАЧА</h4>
+      <p>50% залишок. Передача файлів і розгортання</p>
+      <span class="step-time">День здачі</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- REVISIONS -->
+<section id="section-revisions">
+  <div class="sec-eye">03 · Правки і зміни</div>
+  <div class="sec-h">БЕЗКОШТОВНО <span>vs ПЛАТНО</span></div>
+  <p class="sec-desc">Чітко і прозоро — що входить в ціну, а що оплачується окремо.</p>
+
+  <div class="rev-table-wrap"><table class="rev-table">
+    <thead>
+      <tr>
+        <th>Тип зміни</th>
+        <th>Базовий</th>
+        <th>Динамічний</th>
+        <th>Преміум</th>
+        <th>Умова</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Виправлення тексту / опечатки</strong><br><span style="font-size:11px;color:rgba(210,224,236,.6)">Зміна слів, назв, контактів</span></td>
+        <td><span class="rev-tag tag-free">Безкоштовно</span></td>
+        <td><span class="rev-tag tag-free">Безкоштовно</span></td>
+        <td><span class="rev-tag tag-free">Безкоштовно</span></td>
+        <td style="font-size:12px">Завжди, без обмежень</td>
+      </tr>
+      <tr>
+        <td><strong>Мінорні правки дизайну</strong><br><span style="font-size:11px;color:rgba(210,224,236,.6)">Колір кнопки, відступи, шрифт</span></td>
+        <td><span class="rev-tag tag-free">2 рази</span></td>
+        <td><span class="rev-tag tag-free">3 рази</span></td>
+        <td><span class="rev-tag tag-free">5 разів</span></td>
+        <td style="font-size:12px">В межах пакету — безкоштовно</td>
+      </tr>
+      <tr>
+        <td><strong>Додавання нового продукту / розділу</strong><br><span style="font-size:11px;color:rgba(210,224,236,.6)">Новий блок або сторінка</span></td>
+        <td><span class="rev-tag tag-paid">₴2 500</span></td>
+        <td><span class="rev-tag tag-paid">₴3 500</span></td>
+        <td><span class="rev-tag tag-free">1 раз безкоштовно</span></td>
+        <td style="font-size:12px">Після — за тарифом</td>
+      </tr>
+      <tr>
+        <td><strong>Зміна структури / концепції</strong><br><span style="font-size:11px;color:rgba(210,224,236,.6)">Переробка макету, зміна логіки</span></td>
+        <td><span class="rev-tag tag-paid">₴8 000+</span></td>
+        <td><span class="rev-tag tag-paid">₴12 000+</span></td>
+        <td><span class="rev-tag tag-paid">₴15 000+</span></td>
+        <td style="font-size:12px">Окремий кошторис</td>
+      </tr>
+      <tr>
+        <td><strong>Додавання нової мовної версії</strong><br><span style="font-size:11px;color:rgba(210,224,236,.6)">Переклад і адаптація</span></td>
+        <td><span class="rev-tag tag-paid">₴6 000</span></td>
+        <td><span class="rev-tag tag-paid">₴5 000</span></td>
+        <td><span class="rev-tag tag-discuss">Обговорюється</span></td>
+        <td style="font-size:12px">Залежить від обсягу</td>
+      </tr>
+      <tr>
+        <td><strong>Терміновість (до 48 год)</strong><br><span style="font-size:11px;color:rgba(210,224,236,.6)">Будь-яка правка з пріоритетом</span></td>
+        <td><span class="rev-tag tag-paid">+50%</span></td>
+        <td><span class="rev-tag tag-paid">+50%</span></td>
+        <td><span class="rev-tag tag-free">Включено</span></td>
+        <td style="font-size:12px">Для Преміум — в пріоритеті</td>
+      </tr>
+      <tr>
+        <td><strong>Правки після здачі проекту</strong><br><span style="font-size:11px;color:rgba(210,224,236,.6)">Через 30+ днів після фіналу</span></td>
+        <td><span class="rev-tag tag-paid">₴1 500/год</span></td>
+        <td><span class="rev-tag tag-paid">₴1 500/год</span></td>
+        <td><span class="rev-tag tag-paid">₴1 200/год</span></td>
+        <td style="font-size:12px">Або місячний план</td>
+      </tr>
+    </tbody>
+  </table></div>
+</section>
+
+<div class="divider"></div>
+
+<!-- MAINTENANCE -->
+<section id="section-maintenance">
+  <div class="sec-eye">04 · Щомісячне обслуговування</div>
+  <div class="sec-h">ПІДТРИМКА <span>САЙТУ</span></div>
+  <p class="sec-desc">Сайт — це живий інструмент. Три плани обслуговування на вибір після здачі проекту.</p>
+
+  <div class="maint-grid">
+    <div class="maint-card">
+      <div class="maint-icon">🔧</div>
+      <h3>БАЗОВА ПІДТРИМКА</h3>
+      <div class="maint-price">₴2 500 <small>/міс</small></div>
+      <div style="font-size:13px;color:rgba(210,224,236,.65);margin-bottom:4px">Підходить для V1</div>
+      <div class="maint-list">
+        <div class="maint-item">Технічна підтримка сайту</div>
+        <div class="maint-item">Оновлення тексту і контакту</div>
+        <div class="maint-item">Резервне копіювання</div>
+        <div class="maint-item">Відповідь протягом 48 год</div>
+        <div class="maint-item">До 2 годин роботи на місяць</div>
+      </div>
+    </div>
+    <div class="maint-card" style="border-color:rgba(0,212,255,.2)">
+      <div class="maint-icon">⚡</div>
+      <h3>АКТИВНА ПІДТРИМКА</h3>
+      <div class="maint-price" style="color:var(--cyan)">₴5 500 <small>/міс</small></div>
+      <div style="font-size:13px;color:rgba(210,224,236,.65);margin-bottom:4px">Підходить для V2</div>
+      <div class="maint-list">
+        <div class="maint-item">Все з базового плану</div>
+        <div class="maint-item">Оновлення продуктів і розділів</div>
+        <div class="maint-item">Мінорні правки дизайну</div>
+        <div class="maint-item">SEO-моніторинг</div>
+        <div class="maint-item">Відповідь протягом 24 год</div>
+        <div class="maint-item">До 5 годин роботи на місяць</div>
+      </div>
+    </div>
+    <div class="maint-card" style="border-color:rgba(240,192,64,.25)">
+      <div class="maint-icon">🛡</div>
+      <h3>ПРЕМІУМ ПІДТРИМКА</h3>
+      <div class="maint-price" style="color:var(--gold)">₴9 500 <small>/міс</small></div>
+      <div style="font-size:13px;color:rgba(210,224,236,.65);margin-bottom:4px">Рекомендовано для V3</div>
+      <div class="maint-list">
+        <div class="maint-item">Все з активного плану</div>
+        <div class="maint-item">Пріоритетна відповідь до 4 год</div>
+        <div class="maint-item">Щомісячний звіт і аналітика</div>
+        <div class="maint-item">Нові мікро-функції в пріоритеті</div>
+        <div class="maint-item">До 10 годин роботи на місяць</div>
+        <div class="maint-item">Консультація по стратегії сайту</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- UPGRADES -->
+<section id="section-upgrades">
+  <div class="sec-eye">05 · Модернізація</div>
+  <div class="sec-h">РОЗВИТОК <span>В МАЙБУТНЬОМУ</span></div>
+  <p class="sec-desc">Сайт росте разом з КБ. Ось що можна додати в будь-який момент.</p>
+
+  <div class="upgrade-grid">
+    <div class="upg-card">
+      <div class="upg-icon">🌍</div>
+      <div>
+        <h4>НОВА МОВНА ВЕРСІЯ</h4>
+        <p>Додавання EN, PL або DE версії сайту. Повна адаптація контенту і UI під мову.</p>
+        <span class="upg-price">від ₴5 000</span>
+      </div>
+    </div>
+    <div class="upg-card">
+      <div class="upg-icon">📦</div>
+      <div>
+        <h4>РОЗШИРЕНИЙ КАТАЛОГ</h4>
+        <p>Фільтри, пошук, детальні сторінки продуктів, порівняння характеристик.</p>
+        <span class="upg-price">від ₴12 000</span>
+      </div>
+    </div>
+    <div class="upg-card">
+      <div class="upg-icon">🔒</div>
+      <div>
+        <h4>ЗАКРИТА ЗОНА ПАРТНЕРІВ</h4>
+        <p>Авторизація, особистий кабінет, закриті документи для партнерів і замовників.</p>
+        <span class="upg-price">від ₴18 000</span>
+      </div>
+    </div>
+    <div class="upg-card">
+      <div class="upg-icon">📊</div>
+      <div>
+        <h4>АНАЛІТИКА І CRM</h4>
+        <p>Підключення Google Analytics, Hotjar, інтеграція з CRM для обліку запитів.</p>
+        <span class="upg-price">від ₴8 000</span>
+      </div>
+    </div>
+    <div class="upg-card">
+      <div class="upg-icon">🎥</div>
+      <div>
+        <h4>ВІДЕО І 3D ЕЛЕМЕНТИ</h4>
+        <p>Фонові відео, 3D-рендери продуктів, анімовані схеми роботи систем.</p>
+        <span class="upg-price">від ₴15 000</span>
+      </div>
+    </div>
+    <div class="upg-card">
+      <div class="upg-icon">📱</div>
+      <div>
+        <h4>PWA / МОБІЛЬНИЙ ЗАСТОСУНОК</h4>
+        <p>Прогресивний веб-додаток або нативний застосунок для iOS/Android.</p>
+        <span class="upg-price">від ₴35 000</span>
+      </div>
+    </div>
+    <div class="upg-card" style="border-color:rgba(0,255,136,.15)">
+      <div class="upg-icon">🤖</div>
+      <div>
+        <h4>АГЕНТНА АВТОМАТИЗАЦІЯ</h4>
+        <p>AI-агенти які самостійно обробляють запити, кваліфікують ліди, надсилають відповіді і ведуть клієнта по воронці без участі людини — 24/7.</p>
+        <span class="upg-price" style="color:var(--green);border-color:rgba(0,255,136,.3)">від ₴25 000</span>
+      </div>
+    </div>
+    <div class="upg-card" style="border-color:rgba(0,212,255,.2)">
+      <div class="upg-icon">🎯</div>
+      <div>
+        <h4>КОМПЛЕКСНА AI РЕКЛАМА</h4>
+        <p>Повна рекламна екосистема на базі AI — TikTok, Meta, Google Ads. Автоматична генерація креативів, таргетинг, A/B тести і оптимізація в режимі реального часу.</p>
+        <span class="upg-price" style="color:var(--cyan);border-color:rgba(0,212,255,.3)">від ₴18 000/міс</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="guarantee">
+    <div class="guarantee-icon">🛡</div>
+    <div>
+      <h3>ГАРАНТІЯ ЯКОСТІ</h3>
+      <p>Якщо протягом 14 днів після здачі виявляться технічні помилки з нашої вини — усуваємо безкоштовно і терміново. Ціна фіксується в договорі після заповнення брифу і не змінюється в процесі роботи. Ви завжди знаєте за що платите.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-block">
+  <h2>ГОТОВІ <span>ПОЧИНАТИ?</span></h2>
+  <p>Наступний крок — заповнити бриф. Це займе 10–15 хвилин.<br>Після цього фіксуємо ціну і стартуємо.</p>
+  <div class="cta-btns">
+    <button class="btn-gold" onclick="openBrief()">Заповнити бриф →</button>
+    <button class="btn-ghost" onclick="openQuestion()">Задати питання</button>
+  </div>
+</div>
+
+<!-- ══════════ MODAL BRIEF ══════════ -->
+<div id="briefModal" style="display:none;">
+  <!-- Layer 1: backdrop blur -->
+  <div style="position:fixed;inset:0;z-index:10000;background:rgba(2,5,10,.92);backdrop-filter:blur(12px);pointer-events:none;"></div>
+  <!-- Layer 2: scroll container -->
+  <div style="position:fixed;inset:0;z-index:10001;overflow-y:auto;padding:20px;" onclick="if(event.target===this)closeBrief()">
+    <div style="max-width:680px;width:100%;background:var(--card);border:1px solid var(--border);padding:40px 40px 52px;margin:0 auto;position:relative;">
+      <button class="modal-close-btn" onclick="closeBrief()">✕</button>
+
+    <!-- HEADER -->
+    <div class="modal-title">ЗАПОВНИ <span>БРИФ</span></div>
+    <div class="modal-pkg-bar">
+      <span class="pkg-lbl">Обраний пакет:</span>
+      <span class="pkg-val" id="modalPkgLabel">Преміум — ₴78 000</span>
+    </div>
+    <p class="modal-desc">Відповідай коротко — так як зручно. Після заповнення скопіюй і надішли в Telegram.</p>
+
+    <!-- FORM -->
+    <div id="briefForm" style="display:flex;flex-direction:column;gap:2px">
+
+      <!-- Q1 -->
+      <div class="bq">
+        <div class="bq-num">01</div>
+        <div class="bq-body">
+          <div class="bq-label">Новий сайт чи редизайн існуючого?</div>
+          <div class="bq-hint">Якщо є поточний сайт — вкажи посилання</div>
+          <textarea class="bq-input" placeholder="Новий / Редизайн — посилання: ..." rows="2"></textarea>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="bq">
+        <div class="bq-num">02</div>
+        <div class="bq-body">
+          <div class="bq-label">Повна назва КБ і слоган (якщо є)</div>
+          <div class="bq-hint">Як компанія має звучати на сайті</div>
+          <textarea class="bq-input" placeholder="Назва: Dragonfly / Слоган: ..." rows="2"></textarea>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="bq">
+        <div class="bq-num">03</div>
+        <div class="bq-body">
+          <div class="bq-label">Які продукти показуємо і в якому порядку?</div>
+          <div class="bq-hint">Перерахуй — можна просто списком</div>
+          <textarea class="bq-input" placeholder="1. Перехоплювачі&#10;2. Бомбер multi-link&#10;..." rows="5"></textarea>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="bq">
+        <div class="bq-num">04</div>
+        <div class="bq-body">
+          <div class="bq-label">Хто головна аудиторія сайту?</div>
+          <div class="bq-hint">Держзамовники, приватні інвестори, іноземні партнери, ЗСУ — хто важливіший?</div>
+          <textarea class="bq-input" placeholder="Наприклад: ЗСУ + держзамовники UA, партнери з ЄС..." rows="2"></textarea>
+        </div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="bq">
+        <div class="bq-num">05</div>
+        <div class="bq-body">
+          <div class="bq-label">Які мови потрібні?</div>
+          <div class="bq-hint">UA / EN / PL / DE — обери пріоритет</div>
+          <textarea class="bq-input" placeholder="Наприклад: UA + EN обов'язково, PL бажано..." rows="2"></textarea>
+        </div>
+      </div>
+
+      <!-- Q6 -->
+      <div class="bq">
+        <div class="bq-num">06</div>
+        <div class="bq-body">
+          <div class="bq-label">Є логотип / фірмовий стиль?</div>
+          <div class="bq-hint">Логотип, кольори, шрифти — що є вже зараз</div>
+          <textarea class="bq-input" placeholder="Є логотип (надішлю файл) / Немає — треба розробити..." rows="2"></textarea>
+        </div>
+      </div>
+
+      <!-- Q7 -->
+      <div class="bq">
+        <div class="bq-num">07</div>
+        <div class="bq-body">
+          <div class="bq-label">Є фото або рендери продуктів?</div>
+          <div class="bq-hint">Реальні фото, 3D-рендери, AI-зображення — що можна використати</div>
+          <textarea class="bq-input" placeholder="Є рендери (надішлю) / Є фото / Потрібно згенерувати..." rows="2"></textarea>
+        </div>
+      </div>
+
+      <!-- Q8 -->
+      <div class="bq">
+        <div class="bq-num">08</div>
+        <div class="bq-body">
+          <div class="bq-label">Приклади сайтів які подобаються</div>
+          <div class="bq-hint">Будь-яка галузь — просто те що візуально зайшло</div>
+          <textarea class="bq-input" placeholder="Посилання або назви компаній..." rows="2"></textarea>
+        </div>
+      </div>
+
+      <!-- Q9 -->
+      <div class="bq">
+        <div class="bq-num">09</div>
+        <div class="bq-body">
+          <div class="bq-label">Стиль — яким має бути сайт?</div>
+          <div class="bq-hint">Серйозний / технологічний / мінімалістичний / агресивний</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px" id="styleOptions">
+            <button class="style-opt" onclick="toggleStyle(this)">Серйозний і стриманий</button>
+            <button class="style-opt" onclick="toggleStyle(this)">Технологічний / cyber</button>
+            <button class="style-opt" onclick="toggleStyle(this)">Мінімалістичний</button>
+            <button class="style-opt" onclick="toggleStyle(this)">Агресивний / bold</button>
+            <button class="style-opt" onclick="toggleStyle(this)">Преміум / luxury</button>
+            <button class="style-opt" onclick="toggleStyle(this)">Military / tactical</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Q10 -->
+      <div class="bq">
+        <div class="bq-num">10</div>
+        <div class="bq-body">
+          <div class="bq-label">Обраний пакет</div>
+          <div class="bq-hint">Який варіант сайту тебе зацікавив?</div>
+          <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap" id="pkgOptions">
+            <button class="pkg-opt" onclick="selectPkg(this)" data-val="Базовий — ₴18 000">Базовий ₴18 000</button>
+            <button class="pkg-opt" onclick="selectPkg(this)" data-val="Динамічний — ₴38 000">Динамічний ₴38 000</button>
+            <button class="pkg-opt active" onclick="selectPkg(this)" data-val="Преміум — ₴78 000">⭐ Преміум ₴78 000</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Q11 -->
+      <div class="bq">
+        <div class="bq-num">11</div>
+        <div class="bq-body">
+          <div class="bq-label">Термін — коли потрібен сайт?</div>
+          <div class="bq-hint">Дедлайн або орієнтовний місяць</div>
+          <textarea class="bq-input" placeholder="Наприклад: до кінця квітня / якомога швидше / без жорстких рамок..." rows="2"></textarea>
+        </div>
+      </div>
+
+      <!-- Q12 -->
+      <div class="bq">
+        <div class="bq-num">12</div>
+        <div class="bq-body">
+          <div class="bq-label">Контакт для зв'язку по проекту</div>
+          <div class="bq-hint">Telegram / телефон / email</div>
+          <textarea class="bq-input" placeholder="@telegram / +380..." rows="1"></textarea>
+        </div>
+      </div>
+
+      <!-- Q13 -->
+      <div class="bq">
+        <div class="bq-num">13</div>
+        <div class="bq-body">
+          <div class="bq-label">Додаткові побажання</div>
+          <div class="bq-hint">Все що вважаєш важливим — будь-яка деталь</div>
+          <textarea class="bq-input" placeholder="Будь-які нотатки, побажання, ідеї..." rows="3"></textarea>
+        </div>
+      </div>
+
+    </div><!-- /form -->
+
+    <!-- ACTIONS -->
+    <div class="modal-actions">
+      <button onclick="sendBriefEmail()" class="btn-gold" style="width:100%;padding:18px;font-size:12px;letter-spacing:3px;display:flex;align-items:center;justify-content:center;gap:10px">
+        ✉️ Надіслати на Email
+      </button>
+      <button onclick="downloadBriefPDF()" style="background:rgba(0,212,255,.08);color:var(--cyan);padding:16px;font-family:'Syne',sans-serif;font-weight:700;font-size:12px;letter-spacing:3px;text-transform:uppercase;border:1px solid rgba(0,212,255,.25);cursor:pointer;width:100%;transition:.2s;display:flex;align-items:center;justify-content:center;gap:10px"
+      onmouseover="this.style.background='rgba(0,212,255,.15)'" onmouseout="this.style.background='rgba(0,212,255,.08)'">
+        📄 Зберегти PDF
+      </button>
+      <button onclick="copyBrief()" style="background:transparent;color:rgba(210,224,236,.6);padding:14px;font-family:'Syne',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;border:1px solid rgba(184,204,216,.12);cursor:pointer;width:100%;transition:.2s"
+      onmouseover="this.style.borderColor='rgba(184,204,216,.3)'" onmouseout="this.style.borderColor='rgba(184,204,216,.12)'">
+        📋 Скопіювати → Telegram
+      </button>
+      <div id="copyMsg" style="display:none;text-align:center;font-size:12px;color:var(--green);letter-spacing:2px;padding:12px;background:rgba(0,255,136,.06);border:1px solid rgba(0,255,136,.2)">✓ СКОПІЙОВАНО — ВСТАВТЕ В TELEGRAM</div>
+      <div id="emailMsg" style="display:none;text-align:center;font-size:12px;color:var(--gold);letter-spacing:2px;padding:12px;background:rgba(240,192,64,.06);border:1px solid rgba(240,192,64,.2)">✉️ ВІДКРИВАЄТЬСЯ ПОШТОВИЙ ЗАСТОСУНОК...</div>
+      <button onclick="closeBrief()" style="background:transparent;color:rgba(210,224,236,.4);padding:12px;font-family:'Syne',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;border:1px solid rgba(184,204,216,.08);cursor:pointer;transition:.2s;width:100%"
+      onmouseover="this.style.borderColor='rgba(184,204,216,.25)'" onmouseout="this.style.borderColor='rgba(184,204,216,.08)'">Закрити</button>
+    </div>
+
+    </div><!-- /brief-card -->
+  </div><!-- /brief-scroll -->
+</div><!-- /briefModal -->
+
+
+
+<footer style="position:relative;z-index:1;background:var(--surface);border-top:1px solid var(--border);padding:40px 60px">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px">
+
+    <!-- Logo centre -->
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:5px;color:var(--white)">DRAGON<span style="color:var(--cyan)">FLY</span> КБ</div>
+
+    <!-- Divider line -->
+    <div style="width:48px;height:1px;background:rgba(0,212,255,.25)"></div>
+
+    <!-- Author block -->
+    <div style="display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap">
+      <div style="width:44px;height:44px;border-radius:50%;background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.25);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--cyan);flex-shrink:0">P</div>
+      <div style="text-align:center">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:3px;color:var(--white);line-height:1">PAVLO FEDONIUK</div>
+        <div style="font-size:11px;letter-spacing:4px;color:var(--cyan);text-transform:uppercase;margin-top:4px">Architect Dev</div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
+      <div style="font-size:12px;letter-spacing:2px;color:rgba(210,224,236,.55)">© 2026</div>
+      <div style="font-size:10px;letter-spacing:3px;color:rgba(210,224,236,.25)">КОНФІДЕНЦІЙНО</div>
+    </div>
+
+  </div>
+</footer>
+
+<!-- ══════════ MODAL QUESTION ══════════ -->
+<div id="questionModal" style="display:none;">
+  <!-- Layer 1: backdrop blur -->
+  <div style="position:fixed;inset:0;z-index:10000;background:rgba(2,5,10,.92);backdrop-filter:blur(12px);pointer-events:none;"></div>
+  <!-- Layer 2: scroll container -->
+  <div style="position:fixed;inset:0;z-index:10001;overflow-y:auto;padding:20px;" onclick="if(event.target===this)closeQuestion()">
+    <div style="max-width:600px;width:100%;background:var(--card);border:1px solid var(--border);padding:40px 40px 52px;margin:0 auto;position:relative;">
+      <button class="modal-close-btn" onclick="closeQuestion()">✕</button>
+
+    <!-- HEADER -->
+    <div class="modal-title">ТВОЄ <span>ПИТАННЯ</span></div>
+    <p class="modal-desc">Вписуй все що цікавить — відповімо особисто в Telegram.</p>
+
+    <!-- NAME -->
+    <div class="qfield">
+      <div class="qfield-label">Як до тебе звертатись?</div>
+      <div class="qfield-hint">Ім'я або нікнейм — необов'язково</div>
+      <input id="qName" type="text" placeholder="Ім'я / нікнейм...">
+    </div>
+
+    <!-- PACKAGE INTEREST -->
+    <div class="qfield">
+      <div class="qfield-label">Який пакет цікавить?</div>
+      <div class="qfield-hint">Або просто загальне питання</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px" id="qPkgOptions">
+        <button class="style-opt" onclick="toggleQPkg(this)" data-val="Базовий">Базовий ₴18 000</button>
+        <button class="style-opt" onclick="toggleQPkg(this)" data-val="Динамічний">Динамічний ₴38 000</button>
+        <button class="style-opt" onclick="toggleQPkg(this)" data-val="Преміум">⭐ Преміум ₴78 000</button>
+        <button class="style-opt" onclick="toggleQPkg(this)" data-val="Ще не визначився">Ще не визначився</button>
+      </div>
+    </div>
+
+    <!-- QUESTION TEXT -->
+    <div class="qfield">
+      <div class="qfield-label">Твоє питання</div>
+      <div class="qfield-hint">Пиши як зручно — коротко або детально</div>
+      <textarea id="qText" rows="5" placeholder="Наприклад: скільки часу займе розробка? чи можна розбити оплату? що входить в підтримку?..."></textarea>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="qfield" style="margin-bottom:28px">
+      <div class="qfield-label">Контакт для відповіді</div>
+      <div class="qfield-hint">Telegram / телефон — куди надіслати відповідь</div>
+      <input id="qContact" type="text" placeholder="@telegram або +380...">
+    </div>
+
+    <!-- ACTIONS -->
+    <div class="modal-actions">
+      <button onclick="sendQuestionEmail()" class="btn-gold" style="width:100%;padding:18px;font-size:12px;letter-spacing:3px;display:flex;align-items:center;justify-content:center;gap:10px">
+        ✉️ Надіслати питання на Email
+      </button>
+      <button onclick="downloadQuestionPDF()" style="background:rgba(0,212,255,.08);color:var(--cyan);padding:16px;font-family:'Syne',sans-serif;font-weight:700;font-size:12px;letter-spacing:3px;text-transform:uppercase;border:1px solid rgba(0,212,255,.25);cursor:pointer;width:100%;transition:.2s"
+      onmouseover="this.style.background='rgba(0,212,255,.15)'" onmouseout="this.style.background='rgba(0,212,255,.08)'">
+        📄 Зберегти PDF копію
+      </button>
+      <button onclick="copyQuestion()" style="background:transparent;color:rgba(210,224,236,.6);padding:14px;font-family:'Syne',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;border:1px solid rgba(184,204,216,.12);cursor:pointer;width:100%;transition:.2s"
+      onmouseover="this.style.borderColor='rgba(184,204,216,.3)'" onmouseout="this.style.borderColor='rgba(184,204,216,.12)'">
+        📋 Скопіювати → Telegram
+      </button>
+      <div id="qCopyMsg" style="display:none;text-align:center;font-size:12px;color:var(--green);letter-spacing:2px;padding:12px;background:rgba(0,255,136,.06);border:1px solid rgba(0,255,136,.2)">✓ СКОПІЙОВАНО — ВСТАВТЕ В TELEGRAM</div>
+      <div id="qEmailMsg" style="display:none;text-align:center;font-size:12px;color:var(--gold);letter-spacing:2px;padding:12px;background:rgba(240,192,64,.06);border:1px solid rgba(240,192,64,.2)">✉️ ВІДКРИВАЄТЬСЯ ПОШТОВИЙ ЗАСТОСУНОК...</div>
+      <button onclick="closeQuestion()" style="background:transparent;color:rgba(210,224,236,.4);padding:12px;font-family:'Syne',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;border:1px solid rgba(184,204,216,.08);cursor:pointer;transition:.2s;width:100%"
+      onmouseover="this.style.borderColor='rgba(184,204,216,.25)'" onmouseout="this.style.borderColor='rgba(184,204,216,.08)'">Закрити</button>
+    </div><!-- /question-card -->
+  </div><!-- /question-scroll -->
+</div><!-- /questionModal -->
+</div><!-- /questionModal-end -->
+
+<script>
+
+// ── BURGER MENU ──
+function navTo(id){
+  // 1. Close menu
+  const menu = document.getElementById('mobileMenu')
+  const btn = document.getElementById('burgerBtn')
+  menu.style.display = 'none'
+  document.body.style.overflow = ''
+  // Reset burger lines
+  const lines = btn.querySelectorAll('.burger-line')
+  lines[0].style.transform = ''
+  lines[1].style.opacity = '1'
+  lines[2].style.transform = ''
+  // 2. Scroll to section after menu animation
+  setTimeout(()=>{
+    const el = document.getElementById(id)
+    if(!el) return
+    const navH = document.querySelector('nav') ? document.querySelector('nav').offsetHeight : 56
+    const top = el.getBoundingClientRect().top + window.pageYOffset - navH - 8
+    window.scrollTo({top: top, behavior: 'smooth'})
+  }, 50)
+}
+function toggleMenu(){
+  const menu = document.getElementById('mobileMenu')
+  const btn = document.getElementById('burgerBtn')
+  const isOpen = menu.style.display === 'flex'
+  menu.style.display = isOpen ? 'none' : 'flex'
+  document.body.style.overflow = isOpen ? '' : 'hidden'
+  // Animate burger lines
+  const lines = btn.querySelectorAll('.burger-line')
+  if(!isOpen){
+    lines[0].style.transform = 'translateY(7px) rotate(45deg)'
+    lines[1].style.opacity = '0'
+    lines[2].style.transform = 'translateY(-7px) rotate(-45deg)'
+  } else {
+    lines[0].style.transform = ''
+    lines[1].style.opacity = '1'
+    lines[2].style.transform = ''
+  }
+}
+
+
+// ── AUTH CHECK ──
+if(sessionStorage.getItem('df_auth')==='1'){
+  document.getElementById('passScreen').style.display='none'
+  document.documentElement.scrollTop = 0
+  document.body.scrollTop = 0
+  window.scrollTo(0, 0)
+} else {
+  document.getElementById('passScreen').style.display='flex'
+  document.body.style.overflow='hidden'
+}
+
+// ── SUPPRESS CONSOLE ──
+window.onerror = function(){ return true }
+
+// ── PASSWORD ──
+function checkPass(){
+  const val = document.getElementById('passInput').value
+  const err = document.getElementById('passError')
+  if(val === 'Dragonfly2026'){
+    const ps = document.getElementById('passScreen')
+    ps.style.transition='opacity .4s'
+    ps.style.opacity='0'
+    setTimeout(()=>{
+      ps.style.display='none'
+      document.body.style.overflow=''
+      document.documentElement.scrollTop = 0
+      document.body.scrollTop = 0
+      window.scrollTo(0, 0)
+    },400)
+    sessionStorage.setItem('df_auth','1')
+  } else {
+    err.style.display='block'
+    document.getElementById('passInput').style.borderColor='rgba(255,68,68,.5)'
+    document.getElementById('passInput').value=''
+    setTimeout(()=>{
+      err.style.display='none'
+      document.getElementById('passInput').style.borderColor='rgba(14,31,48,1)'
+    },2500)
+  }
+}
+
+
+// ── BRIEF MODAL ──
+function openBrief(){
+  document.getElementById('briefModal').style.display='block'
+  document.body.style.overflow='hidden'
+  const b=document.getElementById('burgerBtn'); if(b) b.style.visibility='hidden'
+}
+function closeBrief(){
+  document.getElementById('briefModal').style.display='none'
+  document.body.style.overflow=''
+  const b=document.getElementById('burgerBtn'); if(b) b.style.visibility='visible'
+}
+function openBriefWithPkg(pkgVal){
+  document.querySelectorAll('.pkg-opt').forEach(btn=>{
+    btn.classList.remove('active')
+    if(btn.dataset.val===pkgVal) btn.classList.add('active')
+  })
+  const lbl = document.getElementById('modalPkgLabel')
+  if(lbl){
+    lbl.textContent = pkgVal
+    lbl.style.color = pkgVal.includes('Преміум') ? 'var(--gold)' : pkgVal.includes('Динамічний') ? 'var(--cyan)' : 'rgba(184,204,216,.5)'
+  }
+  openBrief()
+}
+
+// ── QUESTION MODAL ──
+function openQuestion(){
+  document.getElementById('questionModal').style.display='block'
+  document.body.style.overflow='hidden'
+  const b=document.getElementById('burgerBtn'); if(b) b.style.visibility='hidden'
+}
+function closeQuestion(){
+  document.getElementById('questionModal').style.display='none'
+  document.body.style.overflow=''
+  const b=document.getElementById('burgerBtn'); if(b) b.style.visibility='visible'
+}
+function toggleQPkg(btn){
+  document.querySelectorAll('#qPkgOptions .style-opt').forEach(b=>b.classList.remove('active'))
+  btn.classList.add('active')
+}
+function toggleStyle(btn){ btn.classList.toggle('active') }
+function selectPkg(btn){
+  document.querySelectorAll('.pkg-opt').forEach(b=>b.classList.remove('active'))
+  btn.classList.add('active')
+}
+
+// ── BUILD TEXTS ──
+function buildBriefText(){
+  const inputs = document.querySelectorAll('#briefForm .bq-input')
+  const styles = [...document.querySelectorAll('.style-opt.active')].map(b=>b.textContent).join(', ')
+  const pkg = document.querySelector('#pkgOptions .pkg-opt.active')?.dataset.val || '—'
+  const questions = ['Новий сайт чи редизайн?','Назва КБ і слоган','Продукти і порядок',
+    'Аудиторія сайту','Мови','Логотип / фірмовий стиль','Фото / рендери продуктів',
+    'Приклади сайтів','Стиль сайту','Обраний пакет','Термін','Контакт','Додаткові побажання']
+  let text = 'БРИФ — КБ DRAGONFLY\n' + '─'.repeat(30) + '\n\n'
+  inputs.forEach((inp,i)=>{
+    text += String(i+1).padStart(2,'0') + '. ' + questions[i] + '\n'
+    if(i===8) text += '→ ' + (styles||'—') + '\n\n'
+    else if(i===9) text += '→ ' + pkg + '\n\n'
+    else text += '→ ' + (inp.value.trim()||'—') + '\n\n'
+  })
+  text += '─'.repeat(30) + '\nArchitect Dev · Dragonfly KB'
+  return text
+}
+function buildQuestionText(){
+  const name = document.getElementById('qName').value.trim()||'—'
+  const pkg = document.querySelector('#qPkgOptions .style-opt.active')?.dataset.val||'—'
+  const text = document.getElementById('qText').value.trim()||'—'
+  const contact = document.getElementById('qContact').value.trim()||'—'
+  return 'ПИТАННЯ — КБ DRAGONFLY\n' + '─'.repeat(30) + '\n\nВід: ' + name + '\nПакет: ' + pkg + '\n\nПитання:\n' + text + '\n\nКонтакт: ' + contact + '\n' + '─'.repeat(30)
+}
+
+// ── COPY ──
+function _copy(text, msgId){
+  navigator.clipboard.writeText(text).catch(()=>{
+    const ta=document.createElement('textarea'); ta.value=text
+    document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta)
+  }).finally(()=>{
+      const m=document.getElementById(msgId); if(m){ m.style.display='block'; setTimeout(()=>m.style.display='none',4000) }
+  })
+}
+function copyBrief(){ _copy(buildBriefText(),'copyMsg') }
+function copyQuestion(){ _copy(buildQuestionText(),'qCopyMsg') }
+
+// ── EMAIL ──
+function sendBriefEmail(){
+  const pkg = document.querySelector('#pkgOptions .pkg-opt.active')?.dataset.val||'Бриф'
+  const subject = encodeURIComponent('Бриф — КБ Dragonfly · ' + pkg)
+  const body = encodeURIComponent(buildBriefText())
+  const m=document.getElementById('emailMsg'); if(m){ m.style.display='block'; setTimeout(()=>m.style.display='none',4000) }
+  window.location.href = 'mailto:architectdevos@protonmail.com?subject=' + subject + '&body=' + body
+}
+function sendQuestionEmail(){
+  const name = document.getElementById('qName').value.trim()||'Клієнт'
+  const subject = encodeURIComponent('Питання від ' + name + ' — КБ Dragonfly')
+  const body = encodeURIComponent(buildQuestionText())
+  const m=document.getElementById('qEmailMsg'); if(m){ m.style.display='block'; setTimeout(()=>m.style.display='none',4000) }
+  window.location.href = 'mailto:architectdevos@protonmail.com?subject=' + subject + '&body=' + body
+}
+
+// ── PDF ──
+function downloadBriefPDF(){
+  const inputs=[...document.querySelectorAll('#briefForm .bq-input')]
+  const styles=[...document.querySelectorAll('.style-opt.active')].map(b=>b.textContent).join(', ')
+  const pkgVal=document.querySelector('#pkgOptions .pkg-opt.active')?.dataset.val||'—'
+  const qs=['Новий сайт чи редизайн?','Назва КБ і слоган','Продукти і порядок','Аудиторія сайту','Мови','Логотип','Фото/рендери','Приклади сайтів','Стиль','Пакет','Термін','Контакт','Побажання']
+  const win=window.open('','_blank')
+  const now=new Date().toLocaleDateString('uk-UA')
+  let html='<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Бриф<\/title><style>body{font-family:Arial,sans-serif;max-width:700px;margin:40px auto;padding:0 24px;font-size:14px;line-height:1.7}h1{font-size:28px;font-weight:900;margin-bottom:4px}.sub{font-size:12px;color:#888;margin-bottom:32px}.pkg{display:inline-block;background:#f0c040;color:#000;padding:6px 16px;font-weight:700;margin-bottom:32px}.q{margin-bottom:20px;padding:16px;border-left:3px solid #00d4ff;background:#f8fcff}.ql{font-weight:700;margin-bottom:6px}.footer{margin-top:40px;padding-top:16px;border-top:1px solid #ddd;font-size:11px;color:#aaa;display:flex;justify-content:space-between}@media print{body{margin:0}}<\/style><\/head><body><h1>БРИФ<\/h1><div class="sub">КБ DRAGONFLY · ARCHITECT DEV<\/div><div class="pkg">ПАКЕТ: '+pkgVal+'<\/div>'
+  inputs.forEach((inp,i)=>{
+    const ans=i===8?(styles||'—'):i===9?pkgVal:(inp.value.trim()||'—')
+    html+='<div class="q"><div class="ql">'+qs[i]+'</div><div>'+ans.replace(/\n/g,'<br>')+'</div></div>'
+  })
+  html+='<div class="footer"><span>КБ Dragonfly · Pavlo Fedoniuk · Architect Dev</span><span>'+now+'</span></div></body></html>'
+  win.document.write(html); win.document.close(); setTimeout(()=>win.print(),500)
+}
+function downloadQuestionPDF(){
+  const name=document.getElementById('qName').value.trim()||'—'
+  const pkg=document.querySelector('#qPkgOptions .style-opt.active')?.dataset.val||'—'
+  const text=document.getElementById('qText').value.trim()||'—'
+  const contact=document.getElementById('qContact').value.trim()||'—'
+  const win=window.open('','_blank')
+  const now=new Date().toLocaleDateString('uk-UA')
+  win.document.write('<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Питання</title><style>body{font-family:Arial,sans-serif;max-width:700px;margin:40px auto;padding:0 24px;font-size:14px;line-height:1.7}.b{margin-bottom:20px;padding:16px;border-left:3px solid #00d4ff;background:#f8fcff}.l{font-weight:700;margin-bottom:6px}.footer{margin-top:40px;padding-top:16px;border-top:1px solid #ddd;font-size:11px;color:#aaa;display:flex;justify-content:space-between}@media print{body{margin:0}}<\/style><\/head><body><h1>ПИТАННЯ</h1><div class="sub">КБ DRAGONFLY · ARCHITECT DEV</div><div class="b"><div class="l">Від</div><div>'+name+'</div></div><div class="b"><div class="l">Пакет</div><div>'+pkg+'</div></div><div class="b"><div class="l">Питання</div><div>'+text.replace(/\n/g,'<br>')+'</div></div><div class="b"><div class="l">Контакт</div><div>'+contact+'</div></div><div class="footer"><span>Architect Dev · Dragonfly KB</span><span>'+now+'</span></div></body></html>')
+  win.document.close(); setTimeout(()=>win.print(),500)
+}
+
+// ── BACKDROP CLOSE ──
+// Backdrop close handled by onclick on scroll layer
+
+</script>
+</body>
+</html>
